@@ -1,6 +1,6 @@
 INSERT INTO users (name, email, password_hash, role, department)
 VALUES
-  ('Ana Martinez', 'admin@intracorp.local', crypt('Password123!', gen_salt('bf', 12)), 'admin', 'IT Governance'),
+  ('Jose Melgarejo', 'admin@intracorp.local', crypt('Password123!', gen_salt('bf', 12)), 'admin', 'IT Governance'),
   ('Luis Pereira', 'soporte@intracorp.local', crypt('Password123!', gen_salt('bf', 12)), 'soporte', 'Mesa de Ayuda'),
   ('Carla Rojas', 'empleado@intracorp.local', crypt('Password123!', gen_salt('bf', 12)), 'empleado', 'Finanzas'),
   ('Mario Benitez', 'mario.benitez@intracorp.local', crypt('Password123!', gen_salt('bf', 12)), 'empleado', 'Operaciones'),
