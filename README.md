@@ -216,6 +216,13 @@ curl http://localhost:8080/api/health
 curl http://localhost:8080/api/health/db
 ```
 
+Desde WSL/Linux tambien puedes usar:
+
+```bash
+chmod +x scripts/check-health.sh
+./scripts/check-health.sh
+```
+
 Entrar a PostgreSQL:
 
 ```powershell
@@ -231,6 +238,12 @@ SELECT * FROM audit_logs ORDER BY created_at DESC LIMIT 10;
 ```
 
 ## Backup y restore
+
+Runbook recomendado:
+
+```text
+runbooks/backup-restore-postgres.md
+```
 
 PowerShell:
 
