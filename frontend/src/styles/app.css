@@ -301,12 +301,31 @@ textarea {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 12px;
   text-align: left;
   border: 1px solid #d8e0e8;
   background: #f8fafc;
   border-radius: 6px;
   padding: 12px;
+}
+
+.ticket-summary {
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.ticket-summary strong {
+  line-height: 1.35;
+}
+
+.ticket-summary span {
+  color: #516073;
+}
+
+.ticket-row .badge {
+  flex: 0 0 auto;
 }
 
 .ticket-card.selected {

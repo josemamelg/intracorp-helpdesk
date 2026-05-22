@@ -43,9 +43,9 @@ export function DashboardPage() {
           <div className="stack-list">
             {metrics.recentTickets.map((ticket) => (
               <div className="list-row ticket-row" key={ticket.id}>
-                <div>
+                <div className="ticket-summary">
                   <strong>#{ticket.id} {ticket.title}</strong>
-                  <span>{ticket.creator_name}</span>
+                  <span>Solicitado por {ticket.creator_name}</span>
                 </div>
                 <StatusBadge status={ticket.status} />
               </div>
