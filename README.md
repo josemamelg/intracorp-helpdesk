@@ -42,7 +42,7 @@ backups/          Dumps de PostgreSQL
 - Docker Compose v2
 - PowerShell en Windows, o shell compatible en Linux/macOS
 
-Si no tienes Docker, puedes correrlo directamente en WSL con Node.js, PostgreSQL y Nginx. Mira la seccion **Modo WSL sin Docker**
+Si no tienes Docker, puedes correrlo directamente en WSL con Node.js, PostgreSQL y Nginx
 
 ## Arranque rapido con Docker
 
