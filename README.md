@@ -243,6 +243,7 @@ Runbook recomendado:
 
 ```text
 runbooks/backup-restore-postgres.md
+runbooks/post-restore-verification.md
 ```
 
 PowerShell:

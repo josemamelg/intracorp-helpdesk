@@ -115,6 +115,7 @@ Confirmar que el estado volvio al valor que tenia al momento del backup.
 ```bash
 curl http://localhost:8080/api/health/db
 curl http://localhost:8080/api/health
+./scripts/verify-db.sh
 docker compose logs --tail=40 backend
 docker compose logs --tail=40 postgres
 ```
@@ -132,6 +133,7 @@ docker compose logs --tail=40 postgres
 - El backup existe en `backups/`.
 - El archivo puede leerse con `gunzip -c`.
 - La restauracion termina sin errores.
+- `scripts/verify-db.sh` termina sin errores.
 - `/api/health/db` responde `database: reachable`.
 - Los datos restaurados coinciden con el estado esperado.
 
