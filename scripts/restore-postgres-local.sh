@@ -17,6 +17,15 @@ if [ ! -f "$BACKUP_FILE" ]; then
   exit 1
 fi
 
-gunzip -c "$BACKUP_FILE" | psql -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" "$DB_NAME"
+echo "Limpiando schema public en $DB_NAME..."
+psql -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" "$DB_NAME" <<SQL
+DROP SCHEMA IF EXISTS public CASCADE;
+CREATE SCHEMA public;
+GRANT ALL ON SCHEMA public TO "$DB_USER";
+GRANT ALL ON SCHEMA public TO public;
+SQL
+
+echo "Restaurando backup..."
+gunzip -c "$BACKUP_FILE" | psql -v ON_ERROR_STOP=1 -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" "$DB_NAME"
 
 echo "Restore local aplicado desde: $BACKUP_FILE"

@@ -88,6 +88,15 @@ SELECT id, title, status FROM tickets WHERE id = 1;
 ./scripts/restore-postgres.sh backups/NOMBRE_DEL_BACKUP.sql.gz
 ```
 
+El script reinicia el schema `public` antes de cargar el dump:
+
+```sql
+DROP SCHEMA IF EXISTS public CASCADE;
+CREATE SCHEMA public;
+```
+
+Esto evita errores por tablas, tipos, indices y claves primarias ya existentes.
+
 ### 4. Validar restore
 
 ```bash
@@ -116,6 +125,7 @@ docker compose logs --tail=40 postgres
 - Un backup no probado no garantiza recuperacion.
 - Si se restaura el archivo equivocado, se puede volver a un estado incorrecto.
 - Conviene documentar fecha, motivo y responsable de cada restore.
+- Cargar un dump SQL completo encima de una base existente sin limpiarla puede producir errores como `relation already exists`, `type already exists` o claves duplicadas.
 
 ## Criterio de exito
 
