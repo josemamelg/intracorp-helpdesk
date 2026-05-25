@@ -85,8 +85,24 @@ services:
     networks:
       - intracorp_net
 
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: intracorp-uptime-kuma
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    volumes:
+      - uptime_kuma_data:/app/data
+    depends_on:
+      - nginx
+      - backend
+      - postgres
+    networks:
+      - intracorp_net
+
 volumes:
   postgres_data:
+  uptime_kuma_data:
 
 networks:
   intracorp_net:

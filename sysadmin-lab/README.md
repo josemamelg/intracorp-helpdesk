@@ -10,6 +10,7 @@ IntraCorp usa un helpdesk interno compuesto por:
 - `frontend`: interfaz React.
 - `backend`: API Express.
 - `postgres`: base de datos principal.
+- `uptime-kuma`: monitoreo HTTP publicado en `localhost:3001`.
 
 Tu trabajo es mantener el servicio disponible, revisar logs, hacer backups, restaurar datos, diagnosticar caidas y ejecutar mantenimiento.
 
@@ -27,6 +28,10 @@ Si no tienes Docker, empieza por `00-wsl-sin-docker.md`.
 8. `08-recursos.md`
 9. `09-mantenimiento.md`
 10. `10-incidentes-simulados.md`
+
+Practicas complementarias:
+
+- `runbooks/uptime-kuma-monitoring.md`
 
 ## Bitacora sugerida
 

@@ -9,6 +9,7 @@ Usuario -> Nginx :8080 -> Frontend React
                    -> Backend Express /api -> PostgreSQL
 Backend -> logs estructurados -> ./logs/backend
 Scripts -> backup/restore -> ./backups
+Uptime Kuma -> monitoreo HTTP interno -> nginx/backend
 ```
 
 ## Decisiones tecnicas
@@ -18,6 +19,7 @@ Scripts -> backup/restore -> ./backups
 - **PostgreSQL**: base robusta para practicar SQL, backups, restore, indices, conexiones y fallos
 - **Docker Compose**: simula servicios separados como en una empresa
 - **Nginx**: reverse proxy unico para frontend y API, ideal para practicar errores de proxy, puertos y headers
+- **Uptime Kuma**: monitoreo basico desde la red Docker usando DNS interno de Compose
 - **JWT + RBAC**: autenticacion con roles `admin`, `soporte` y `empleado`
 - **Winston + Morgan**: logs HTTP y logs de aplicacion en JSON
 - **Auditoria en DB**: login, cambios de tickets, comentarios y usuarios quedan registrados
@@ -56,6 +58,12 @@ Abrir:
 
 ```text
 http://localhost:8080
+```
+
+Monitoreo:
+
+```text
+http://localhost:3001
 ```
 
 ## Modo WSL sin Docker
@@ -267,6 +275,29 @@ WSL sin Docker:
 chmod +x scripts/*.sh
 ./scripts/backup-postgres-local.sh
 ./scripts/restore-postgres-local.sh ./backups/intracorp-helpdesk-local-YYYYMMDD-HHMMSS.sql.gz
+```
+
+## Monitoreo con Uptime Kuma
+
+Runbook recomendado:
+
+```text
+runbooks/uptime-kuma-monitoring.md
+```
+
+Uptime Kuma se publica hacia el host en:
+
+```text
+http://localhost:3001
+```
+
+Como Kuma corre dentro de Docker, los monitores deben usar URLs internas:
+
+```text
+http://nginx/health
+http://backend:4000/api/health
+http://backend:4000/api/health/db
+http://nginx/
 ```
 
 ## Crear un admin manualmente
