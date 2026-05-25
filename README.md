@@ -1,6 +1,6 @@
 # IntraCorp Helpdesk
 
-Sistema interno de tickets para practicar tareas reales de SysAdmin/DevOps: despliegue, reverse proxy, autenticacion, roles, PostgreSQL, logs, backups, health checks, auditoria, monitoreo basico y troubleshooting.
+Es un sistema interno de tickets para practicar tareas reales de SysAdmin/DevOps: despliegue, reverse proxy, autenticacion, roles, PostgreSQL, logs, backups, health checks, auditoria, monitoreo basico y troubleshooting
 
 ## Arquitectura
 
@@ -13,15 +13,15 @@ Scripts -> backup/restore -> ./backups
 
 ## Decisiones tecnicas
 
-- **Node.js + Express**: API simple, observable y facil de depurar con logs y health checks.
-- **React + Vite**: frontend rapido para practicar flujos reales sin exceso de complejidad.
-- **PostgreSQL**: base robusta para practicar SQL, backups, restore, indices, conexiones y fallos.
-- **Docker Compose**: simula servicios separados como en una empresa.
-- **Nginx**: reverse proxy unico para frontend y API, ideal para practicar errores de proxy, puertos y headers.
-- **JWT + RBAC**: autenticacion con roles `admin`, `soporte` y `empleado`.
-- **Winston + Morgan**: logs HTTP y logs de aplicacion en JSON.
-- **Auditoria en DB**: login, cambios de tickets, comentarios y usuarios quedan registrados.
-- **Health checks**: Docker y endpoints HTTP para diagnosticar estado de servicios.
+- **Node.js + Express**: API simple, observable y facil de depurar con logs y health checks
+- **React + Vite**: frontend rapido para practicar flujos reales sin exceso de complejidad
+- **PostgreSQL**: base robusta para practicar SQL, backups, restore, indices, conexiones y fallos
+- **Docker Compose**: simula servicios separados como en una empresa
+- **Nginx**: reverse proxy unico para frontend y API, ideal para practicar errores de proxy, puertos y headers
+- **JWT + RBAC**: autenticacion con roles `admin`, `soporte` y `empleado`
+- **Winston + Morgan**: logs HTTP y logs de aplicacion en JSON
+- **Auditoria en DB**: login, cambios de tickets, comentarios y usuarios quedan registrados
+- **Health checks**: Docker y endpoints HTTP para diagnosticar estado de servicios
 
 ## Estructura
 
@@ -42,7 +42,7 @@ backups/          Dumps de PostgreSQL
 - Docker Compose v2
 - PowerShell en Windows, o shell compatible en Linux/macOS
 
-Si no tienes Docker, puedes correrlo directamente en WSL con Node.js, PostgreSQL y Nginx. Mira la seccion **Modo WSL sin Docker**.
+Si no tienes Docker, puedes correrlo directamente en WSL con Node.js, PostgreSQL y Nginx. Mira la seccion **Modo WSL sin Docker**
 
 ## Arranque rapido con Docker
 
@@ -62,10 +62,10 @@ http://localhost:8080
 
 Este modo sirve si tienes Ubuntu/WSL pero no Docker. Vas a correr cada servicio directamente en Linux:
 
-- PostgreSQL como servicio local.
-- Backend Express en `localhost:4000`.
-- Frontend Vite en `localhost:5173`.
-- Nginx local como reverse proxy en `localhost:8080`.
+- PostgreSQL como servicio local
+- Backend Express en `localhost:4000`
+- Frontend Vite en `localhost:5173`
+- Nginx local como reverse proxy en `localhost:8080`
 
 ### 1. Instalar dependencias del sistema
 
