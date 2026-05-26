@@ -28,6 +28,7 @@ Si no tienes Docker, empieza por `00-wsl-sin-docker.md`.
 8. `08-recursos.md`
 9. `09-mantenimiento.md`
 10. `10-incidentes-simulados.md`
+11. `11-linux-diagnostico-basico.md`
 
 Practicas complementarias:
 
